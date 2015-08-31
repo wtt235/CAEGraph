@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html ng-app="caeApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/bootstrap")
+    @Styles.Render("~/bundles/chart.css")
+    @Scripts.Render("~/bundles/angular")
+</head>
+<body>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+@Scripts.Render("~/bundles/chart")
+@Scripts.Render("~/bundles/moment")
+@RenderSection("scripts", required: false)
+</body>
+</html>
