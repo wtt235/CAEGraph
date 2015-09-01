@@ -11,7 +11,7 @@
 
 ## Testing
 
-Unit tests can be found in the CAEGraph.Tests project.  They should run find in Visual Studio's Test Explorer.  
+Unit tests can be found in the CAEGraph.Tests project.  They should run fine in Visual Studio's Test Explorer.  
 There are also some angular tests in the Jasmine folder (CAEGraph/CAEGraph.Tests/Jasmine/UnitTests.html).
 
 ## Use
