@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.Entity;
-using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using CAEGraph.Data.Entities;
 using CAEGraph.Data;
 using CAEGraph.Services;
-using CAEGraph.Services.DTOs;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

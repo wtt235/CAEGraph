@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Web.Http.Results;
-using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CAEGraph;
 using CAEGraph.Controllers;
-using CAEGraph.Data;
-using CAEGraph.Data.Entities;
 using CAEGraph.Services;
 using CAEGraph.Services.DTOs;
 using Moq;

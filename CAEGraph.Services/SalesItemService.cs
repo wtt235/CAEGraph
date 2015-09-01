@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
-using System.Globalization;
 using System.Linq;
 using CAEGraph.Data;
 using CAEGraph.Services.DTOs;
-using System.Data.Entity;
 
 namespace CAEGraph.Services
 {
