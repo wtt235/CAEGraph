@@ -7,14 +7,13 @@
                     <select id="period" class="form-control" ng-model="selectedPeriod" ng-change="showChart()" 
                             data-ng-options="period.value as period.name for period in periods" >>
                     </select>
-
-                    <input type="date" class="form-control" datepicker-popup ng-model="startDate" 
-                           ng-required="true" ng-change="showChart()" ng-model-options="{debounce: 1000}"/>
-                    <input type="date" class="form-control" datepicker-popup ng-model="endDate" 
-                           ng-required="true" ng-change="showChart()" ng-model-options="{debounce: 1000}"/>
+                    <input type="date" class="form-control" ng-model="startDate"
+                            ng-required="true" ng-change="showChart()" ng-model-options="{debounce: 1000}"/>
+                    <input type="date" class="form-control" ng-model="endDate"
+                            ng-required="true" ng-change="showChart()" ng-model-options="{debounce: 1000}" />
 
                     <button class="btn btn-default" ng-click="resetZoom()">Reset Zoom</button>
-                </fieldset>
+</fieldset>
             </form>
         </div>     
     </div>

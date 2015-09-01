@@ -43,4 +43,18 @@
     $scope.resetZoom = function () {
         chart.unzoom();
     };
+
+    $scope.open = function ($event) {
+        $scope.status.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
+
+    $scope.status = {
+        opened: false
+    };
+
 });
