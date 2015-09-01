@@ -64,6 +64,20 @@ namespace CAEGraph.Tests.Controllers
         }
 
         [TestMethod]
+        public void GetByQuarter()
+        {
+            var service = new SalesItemService(context.Object);
+            var start = new DateTime(2015, 8, 1);
+            var end = new DateTime(2018, 1, 1);
+            var result = service.GetByDate(Constants.Period.Quarter, start, end);
+            Assert.AreEqual(result.Count(), 4);
+            result = result.OrderBy(a => new DateTime(a.Year, a.Month, a.Day));
+            Assert.AreEqual(result.First().TotalAmount, 3);
+
+
+        }
+
+        [TestMethod]
         public void GetByYear()
         {
             var service = new SalesItemService(context.Object);
