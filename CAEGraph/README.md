@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Clone repository
+1. Clone repository (https://github.com/wtt235/CAEGraph.git)
 2. Run Database scripts (found at 'CAEGraph/CAEGraph.Data/Scripts')
 3. Open the solution (CAEGraph.sln) in Visual Studio
 4. Build the solution.  Nuget packages should update during build.
