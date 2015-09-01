@@ -46,10 +46,12 @@ namespace CAEGraph.Services
         private IEnumerable<SaleResult> GetByDateDay(DateTime start, DateTime end)
         {
             var query = Context.SaleItems.Where(a => a.Date >= start && a.Date <= end)
-                .GroupBy(g => DbFunctions.TruncateTime(g.Date))
+                .GroupBy(g => new {g.Date.Year, g.Date.Month, g.Date.Day})
                 .Select(r => new SaleResult
                 {
-                    Date = r.Key.Value,
+                    Year = r.Key.Year,
+                    Month = r.Key.Month,
+                    Day = r.Key.Day,
                     TotalAmount = r.Sum(si => si.Amount),
                     TotalSales = r.Count()
                 });
@@ -60,10 +62,12 @@ namespace CAEGraph.Services
         {
             var sales = GetByDateDay(start, end);
             var result = sales
-                .GroupBy(g => FirstDateOfWeek(g.Date))
+                .GroupBy(g => FirstDateOfWeek(new DateTime(g.Year, g.Month, g.Day)))
                 .Select(r => new SaleResult
                 {
-                    Date  = r.Key,
+                    Year = r.Key.Year,
+                    Month = r.Key.Month,
+                    Day = r.Key.Day,
                     TotalAmount = r.Sum(ta => ta.TotalAmount),
                     TotalSales = r.Sum(ts=> ts.TotalSales)
                 });
@@ -73,10 +77,12 @@ namespace CAEGraph.Services
         private IEnumerable<SaleResult> GetByDateMonth(DateTime start, DateTime end)
         {
             var sales = GetByDateDay(start, end);
-            var result = sales.GroupBy(g => new DateTime(g.Date.Year, g.Date.Month, 1))
+            var result = sales.GroupBy(g => new DateTime(g.Year, g.Month, 1))
                 .Select(r => new SaleResult
                 {
-                    Date = r.Key,
+                    Year = r.Key.Year,
+                    Month = r.Key.Month,
+                    Day = r.Key.Day,
                     TotalAmount = r.Sum(ta => ta.TotalAmount),
                     TotalSales = r.Sum(ts => ts.TotalSales)
                 });
@@ -91,10 +97,12 @@ namespace CAEGraph.Services
             };
             var sales = GetByDateDay(start, end);
             var result = sales
-                .GroupBy(g => new { g.Date.Year, Quarter = (g.Date.Month - 1) / 3 + 1 })
+                .GroupBy(g => new { g.Year, Quarter = (g.Month - 1) / 3 + 1 })
                 .Select(r => new SaleResult
                 {
-                    Date = new DateTime(r.Key.Year, monthQuarter[r.Key.Quarter], 1),
+                    Year = r.Key.Year,
+                    Month = monthQuarter[r.Key.Quarter],
+                    Day = 1,
                     TotalAmount = r.Sum(ta => ta.TotalAmount),
                     TotalSales = r.Sum(ts => ts.TotalSales)
                 });
@@ -105,17 +113,19 @@ namespace CAEGraph.Services
         {
             var sales = GetByDateDay(start, end);
             var result = sales
-                .GroupBy(g => g.Date.Year)
+                .GroupBy(g => g.Year)
                 .Select(r => new SaleResult
                 {
-                    Date = new DateTime(r.Key, 1, 1),
+                    Year = r.Key,
+                    Month = 1,
+                    Day = 1,
                     TotalAmount = r.Sum(ta => ta.TotalAmount),
                     TotalSales = r.Sum(ts => ts.TotalSales)
                 });
             return result;
         }
 
-        public DateTime FirstDateOfWeek(DateTime date)
+        private DateTime FirstDateOfWeek(DateTime date)
         {
             int delta = DayOfWeek.Sunday - date.DayOfWeek;
             return date.AddDays(delta);

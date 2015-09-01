@@ -12,7 +12,7 @@ namespace CAEGraph.Controllers
 {
     public class SaleItemsController : ApiController
     {
-        private ISalesItemService SalesItemService;
+        private readonly ISalesItemService SalesItemService;
 
         public SaleItemsController(ISalesItemService salesItemsService)
         {
@@ -23,7 +23,11 @@ namespace CAEGraph.Controllers
         public IEnumerable<SaleResultViewModel> Get(Constants.Period period, DateTime start, DateTime end)
         {
             var result = SalesItemService.GetByDate(period, start, end)
-                .Select(a => new SaleResultViewModel(a.Date,a.TotalAmount, a.TotalSales));
+                .Select(a => new SaleResultViewModel(
+                    new DateTime(a.Year, a.Month, a.Day),
+                    a.TotalAmount,
+                    a.TotalSales)
+                );
 
             return result;
         }

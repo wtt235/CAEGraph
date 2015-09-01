@@ -16,8 +16,10 @@
   "dependencies": {
     "angular": "angularjs#~1.4.4",
     "angular-bootstrap": "~0.13.3",
+    "angular-mocks": "~1.4.5",
     "bootstrap": "~3.3.5",
     "c3": "~0.4.10",
+    "jasmine-core": "jasmine#~2.3.4",
     "moment": "~2.10.6"
   }
 }

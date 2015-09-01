@@ -16,7 +16,7 @@ namespace CAEGraph
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType<ICAEGraphContext, CAEGraphContext>();
+            container.RegisterType<ICAEGraphContext, CAEGraphContext>(new InjectionConstructor());
             container.RegisterType<ISalesItemService, SalesItemService>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

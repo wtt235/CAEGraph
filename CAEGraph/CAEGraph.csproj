@@ -166,6 +166,10 @@
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap.js" />
     <Content Include="bower_components\angular-bootstrap\ui-bootstrap.min.js" />
+    <Content Include="bower_components\angular-mocks\angular-mocks.js" />
+    <Content Include="bower_components\angular-mocks\ngAnimateMock.js" />
+    <Content Include="bower_components\angular-mocks\ngMock.js" />
+    <Content Include="bower_components\angular-mocks\ngMockE2E.js" />
     <Content Include="bower_components\angular\angular-csp.css" />
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
@@ -206,6 +210,20 @@
     <Content Include="bower_components\c3\extensions\js\c3ext.js" />
     <Content Include="bower_components\d3\d3.js" />
     <Content Include="bower_components\d3\d3.min.js" />
+    <Content Include="bower_components\jasmine-core\images\jasmine-horizontal.png" />
+    <Content Include="bower_components\jasmine-core\images\jasmine-horizontal.svg" />
+    <Content Include="bower_components\jasmine-core\images\jasmine_favicon.png" />
+    <Content Include="bower_components\jasmine-core\lib\console\console.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\boot.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\example\node_example\lib\jasmine_examples\Player.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\example\node_example\lib\jasmine_examples\Song.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\jasmine-html.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\jasmine.css" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\jasmine.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\json2.js" />
+    <Content Include="bower_components\jasmine-core\lib\jasmine-core\node_boot.js" />
+    <Content Include="bower_components\jasmine-core\requirements.txt" />
     <Content Include="bower_components\jquery\dist\jquery.js" />
     <Content Include="bower_components\jquery\dist\jquery.min.js" />
     <Content Include="bower_components\jquery\MIT-LICENSE.txt" />
@@ -720,6 +738,19 @@
     <Content Include="bower_components\moment\CHANGELOG.md" />
     <Content Include="bower_components\moment\LICENSE" />
     <Content Include="bower_components\moment\README.md" />
+    <Content Include="bower_components\jasmine-core\.bower.json" />
+    <Content Include="bower_components\jasmine-core\bower.json" />
+    <Content Include="bower_components\jasmine-core\CONTRIBUTING.md" />
+    <Content Include="bower_components\jasmine-core\GOALS_2.0.md" />
+    <Content Include="bower_components\jasmine-core\MANIFEST.in" />
+    <Content Include="bower_components\jasmine-core\MIT.LICENSE" />
+    <Content Include="bower_components\jasmine-core\package.json" />
+    <Content Include="bower_components\jasmine-core\README.md" />
+    <Content Include="bower_components\jasmine-core\RELEASE.md" />
+    <Content Include="bower_components\angular-mocks\.bower.json" />
+    <Content Include="bower_components\angular-mocks\bower.json" />
+    <Content Include="bower_components\angular-mocks\package.json" />
+    <Content Include="bower_components\angular-mocks\README.md" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
