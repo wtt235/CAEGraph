@@ -10,8 +10,7 @@ namespace CAEGraph.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
+            ViewBag.Title = "My Chart";
             return View();
         }
     }
